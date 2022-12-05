@@ -11,8 +11,7 @@ ReactJS 기반 Kollus Live 예제 프로젝트
 ```javascript
 ...
 const useInfoStore = create((set) => ({
-  // iframe 링크를 저장하는 곳
-  src: "",
+  src: "", // iframe 링크를 저장하는 곳 (수정 X)
   // lmckey : 채널 키, live_media_channel_key 축약 형태
   lmckey: "", // ch01 채널 키
   multiViewKey : {
