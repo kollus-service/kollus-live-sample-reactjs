@@ -52,7 +52,6 @@ const useInfoStore = create((set) => ({
 
 # Feature
 - Multi View
-- Web 채팅 SDK
 
 # Tech Stack
 - mui
