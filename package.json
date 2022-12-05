@@ -1,0 +1,41 @@
+{
+  "name": "nextjs",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "prod": "PORT=9090 next start",
+    "prod-win": "set PORT=9090 && next start",
+    "start": "PORT=9090 next dev",
+    "start-win": "set PORT=9090 && next dev",
+    "build": "next build",
+    "build-win": "next build",
+    "export": "cp next.config.js.prod next.config.js && next build && next export",
+    "export-win": "copy next.config.js.prod next.config.js && next build && next export",
+    "lint": "next lint",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
+    "generate": "rm -rf node_modules/.cache && next build && next export",
+    "deploy": "touch out/.nojekyll && git add -f out && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages && cp next.config.js.dev next.config.js",
+    "deploy-win": "fsutil file createnew out/.nojekyll 0 && git add -f out && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages && copy next.config.js.dev next.config.js"
+  },
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@next/font": "latest",
+    "axios": "^1.2.0",
+    "http-proxy-middleware": "^2.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "next": "latest",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zustand": "^4.1.4"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-next": "latest"
+  }
+}
