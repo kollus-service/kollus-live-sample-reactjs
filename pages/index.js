@@ -9,18 +9,19 @@ import useInfoStore from "../src/store/info";
 
 export default function Index() {
   const [datetime, setDatetime] = useState();
-  const { src, multiViewKey, setLmckey, generateLiveSrc } =
+  const { src, multiViewKey, setLmckey, setSelectedCam, generateLiveSrc } =
     useInfoStore();
 
   useEffect(() => {
     generateLiveSrc();
 
-    setInterval(() => {
+    const identifier = setInterval(() => {
       setDatetime(Date.now());
     }, 5000);
   }, [src]);
 
-  const changeView = (lmckey) => {
+  const changeView = (cam, lmckey) => {
+    setSelectedCam(cam);
     setLmckey(lmckey);
     generateLiveSrc();
   };
@@ -46,9 +47,10 @@ export default function Index() {
             {Object.keys(multiViewKey).map((cam) => {
               return <SnapShot
                 key={cam}
+                cam={cam}
                 lmckey={multiViewKey[cam]}
                 datetime={datetime}
-                changeView={() => changeView(multiViewKey[cam])}
+                changeView={() => changeView(cam, multiViewKey[cam])}
               />;
             })}
           </Stack>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import useInfoStore from '../../store/info';
 
 const PlayerView = (props) => {
-  const { liveSecurity } = useInfoStore();
+  const { selectedCam, liveSecurity } = useInfoStore();
 
   useEffect(() => {
   }, []);
@@ -16,7 +16,7 @@ const PlayerView = (props) => {
       height={135}
       loading="eager"
       onClick={props.changeView}
-      style={{cursor:"pointer"}}
+      style={{cursor:"pointer", border: selectedCam === props.cam?"2px solid #03ac13":"none"}}
       />
     </>
   );

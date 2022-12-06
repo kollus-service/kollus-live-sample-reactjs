@@ -14,10 +14,12 @@ const useInfoStore = create((set) => ({
   src: "", // iframe 링크를 저장하는 곳 (수정 X)
   // lmckey : 채널 키, live_media_channel_key 축약 형태
   lmckey: "", // ch01 채널 키
+  selectedCam: "cam1", // 선택된 채널
   multiViewKey : {
     cam1 : "", // ch01 채널 키
     cam2 : "", // ch02 채널 키
     cam3 : "", // ch03 채널 키
+    cam4 : "", // ch04 채널 키
   },
   cuid: "", // 채팅에서 사용할 사용자 아이디
   liveSecurity: "", // 기본 정보 > 서비스 계정 > 서비스 계정 키
