@@ -17,7 +17,7 @@ export default function Index() {
 
     const identifier = setInterval(() => {
       setDatetime(Date.now());
-    }, 5000);
+    }, 10 * 1000); // 10초에 한번씩 Poster 요청
   }, [src]);
 
   const changeView = (cam, lmckey) => {
@@ -34,7 +34,7 @@ export default function Index() {
       justifyContent="center">
         <Stack spacing={2} sx={{ mt: 6 }}>
           <Typography variant="h3" component="h3">
-            Multi Cam Sample
+            Kollus LIVE Sample
           </Typography>
           <PlayerView src={src} />
           <Stack
