@@ -47,7 +47,7 @@ const useInfoStore = create((set) => ({
 
       return {
         // 토큰 만료 시간(expt)을 5~10초 로 설정
-        src: generateLiveJwt(info, 10),
+        src: generateLiveJwt(info, 600),
       };
     }),
 }));
