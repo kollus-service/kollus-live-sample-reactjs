@@ -9,7 +9,7 @@
     "start-win": "set PORT=9090 && next dev",
     "build": "next build",
     "build-win": "next build",
-    "export": "cp next.config.js.prod next.config.js && next build && next export",
+    "export": "next build && next export",
     "export-win": "copy next.config.js.prod next.config.js && next build && next export",
     "lint": "next lint",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
